@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handbags- Alpha Luxury</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- StyleSheet for nav and footer-->
+    <link rel="stylesheet" href="../../../assets/styles/main-css-style.css">
+    <link rel="stylesheet" href="../../../assets/styles/styles.css">
+    <link rel="stylesheet" href="../../../components/footer/footer.css">
+    <link rel="stylesheet" href="../../../components/navigation-bar/navigation.css">
+    <link rel="icon" href="/public/images/7-logo.png"/>
+</head>
+<body>
+    <!-- Header -->
+    <div class="nav-header"></div>
+    
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="heading-title">HANDBAGS</h2>
+        <div class="container">
+            <div class="content-wrapper">
+                
+                <!-- Filters Sidebar -->
+                <aside id="filterSidebar" class="filter-sidebar">
+                    <div class="filter-content">
+                        <!-- Categories Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Categories</h3>
+                            <div class="filter-options" id="categoryFilters">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Tote Bags">
+                                    <span class="checkmark"></span>
+                                    Tote Bags
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Shoulder Bags">
+                                    <span class="checkmark"></span>
+                                    Shoulder Bags
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Crossbody Bags">
+                                    <span class="checkmark"></span>
+                                    Crossbody Bags
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Clutches">
+                                    <span class="checkmark"></span>
+                                    Clutches
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Backpacks">
+                                    <span class="checkmark"></span>
+                                    Backpacks
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Satchels">
+                                    <span class="checkmark"></span>
+                                    Satchels
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Evening Bags">
+                                    <span class="checkmark"></span>
+                                    Evening Bags
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Price Range</h3>
+                            <div class="price-range-container">
+                                <input type="range" id="priceRange" min="50" max="10000" value="5000" class="price-slider">
+                                <div class="price-values">
+                                    <span>$50</span>
+                                    <span id="currentPrice">$5000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brands Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Brands</h3>
+                            <div class="filter-options" id="brandFilters">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Alpha Luxury">
+                                    <span class="checkmark"></span>
+                                    Alpha Luxury
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Golden Collection">
+                                    <span class="checkmark"></span>
+                                    Golden Collection
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Elite Series">
+                                    <span class="checkmark"></span>
+                                    Elite Series
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Premium Line">
+                                    <span class="checkmark"></span>
+                                    Premium Line
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Signature Collection">
+                                    <span class="checkmark"></span>
+                                    Signature Collection
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Materials Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Materials</h3>
+                            <div class="filter-options" id="materialFilters">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Genuine Leather">
+                                    <span class="checkmark"></span>
+                                    Genuine Leather
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Quilted Leather">
+                                    <span class="checkmark"></span>
+                                    Quilted Leather
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Textured Leather">
+                                    <span class="checkmark"></span>
+                                    Textured Leather
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Smooth Leather">
+                                    <span class="checkmark"></span>
+                                    Smooth Leather
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Patent Leather">
+                                    <span class="checkmark"></span>
+                                    Patent Leather
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Suede">
+                                    <span class="checkmark"></span>
+                                    Suede
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear All Filters Button -->
+                        <div class="clear-filters-container">
+                            <button id="clearFilters" class="clear-filters-btn">
+                                <i class="fas fa-times"></i>
+                                Clear All Filters
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Mobile Filter Overlay -->
+                <div id="mobileFilterOverlay" class="mobile-filter-overlay">
+                    <div class="mobile-filter-content">
+                        <div class="mobile-filter-header">
+                            <h2>Filters</h2>
+                            <button id="closeMobileFilter" class="close-mobile-filter">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-grid-container">
+                    
+                    <div id="productGrid" class="product-grid">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+    <div class="site-footer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

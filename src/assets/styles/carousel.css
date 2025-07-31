@@ -1,0 +1,126 @@
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-width: 250px;
+  max-width: 280px;
+  margin-right: 16px;
+}
+
+.card:hover{
+  filter: drop-shadow(5px 5px 5px #d4af37);
+  scale: 1.01;
+  z-index: 20;
+}
+/*
+.badge-success {
+  background-color: #4CAF50;
+  margin-left: 100px;
+}
+.badge-danger {
+  background-color: #f44336;
+}
+.price-old {
+  text-decoration: line-through;
+  color: #aaa;
+} */
+
+.carousel-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;    
+    
+  
+}
+.carousel-wrapper::-webkit-scrollbar {
+  height: 1px;
+  scrollbar-width: 100px;
+  
+}
+.carousel-wrapper::-webkit-scrollbar-thumb {
+  background: #ffd700;
+  border-radius: 10px;
+}
+.carousel-wrapper .card {
+  display: inline-block;
+  vertical-align: top;
+  
+}
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+}
+.card-body {
+  padding: 0;
+}
+
+.card-text {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+
+
+.card-body h5{
+  color: #d4af37;
+}
+
+.container{
+  display: grid;
+  grid-template-rows: 2;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: #f2eeeecc;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 4px #d4af37;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-button:hover {
+  background-color: #d4af37;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-left {
+  left: 25px;
+}
+
+.scroll-right {
+  right: 25px;
+}
+
+.heading-section{
+ color: #d4af37;
+ margin-top: 20px;
+}
+
+.addToCart {
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addToCart:hover {
+  background-color: #d4af37;
+  color: #fff;
+}

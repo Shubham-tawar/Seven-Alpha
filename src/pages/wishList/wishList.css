@@ -1,0 +1,142 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  margin: 0;
+  
+}
+
+.wishlist-container{
+padding: 110px;
+}
+
+.wishlist-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(100deg, #f4e4bc, #d4af37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.wishlist-card {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: 0.3s ease;
+  position: relative;
+  max-width: 300px;
+}
+
+.wishlist-card:hover {
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.wishlist-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.wishlist-content {
+  padding: 1rem;
+}
+
+.wishlist-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.wishlist-price {
+  color: gold;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.remove-btn {
+  background: transparent;
+  border: 1px solid gold;
+  color: gold;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.remove-btn:hover {
+  background: gold;
+  color: #000;
+}
+
+.cart-btn {
+  background: linear-gradient(135deg, gold, #f4e4bc);
+  border: none;
+  color: black;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: gold;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wishlist-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.buy-all-btn {
+  background: linear-gradient(135deg, gold, #f4e4bc);
+  color: black;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  transition: 0.3s ease;
+}
+
+.buy-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.5);
+}

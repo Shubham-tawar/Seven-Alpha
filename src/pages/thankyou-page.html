@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Seven Alpha</title>
+    <!-- StyleSheet for nav and footer-->
+    <link rel="stylesheet" href="/src/assets/styles/main-css-style.css">
+    <link rel="stylesheet" href="/src/assets/styles/styles.css">
+    <link rel="stylesheet" href="/src/components/footer/footer.css">
+    <link rel="stylesheet" href="/src/components/navigation-bar/navigation.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/logo.PNG">
+    <link rel="stylesheet" href="/src/pages/thankyou-page.css">
+</head>
+<body>
+    <div class="nav-header"></div>
+
+    <main class="thank-you-container">
+        <h1 class="thank-you-title">Thank You for Your Order!</h1>
+        
+        <p class="thank-you-message">
+            Your order has been successfully placed. We're thrilled to have you as our customer and are working on processing your order right away.
+        </p>
+
+        <div id="order-details" class="order-details">
+            <h3>Order Details</h3>
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+            </div>
+            <div id="order-info" class="order-info" style="display: none;">
+                <!-- Order details will be populated here -->
+            </div>
+        </div>
+
+        <p class="thank-you-message">
+            A confirmation email has been sent to your registered email address. If you have any questions about your order, please contact our customer service.
+        </p>
+
+        <div class="action-buttons">
+            <a href="/" class="action-button">Continue Shopping</a>
+            <a href="/src/pages/account/orders.html" class="action-button">View My Orders</a>
+        </div>
+    </main>
+
+    <div class="site-footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to load the header and footer
+        $(function () {
+            $(".nav-header").load("/src/components/navigation-bar/navigation.html");
+            $(".site-footer").load("/src/components/footer/footer.html");
+        });
+
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        // Get the order ID from URL parameters
+        const orderId = getUrlParameter('order_id');
+
+        // If order ID exists, fetch order details
+        if (orderId) {
+            const token = localStorage.getItem('token');
+            
+            if (token) {
+                fetch(`/api/orders/${orderId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch order details');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Hide loading spinner
+                    document.getElementById('loading').style.display = 'none';
+                    
+                    // Show order info container
+                    const orderInfoContainer = document.getElementById('order-info');
+                    orderInfoContainer.style.display = 'grid';
+                    
+                    // Populate order details
+                    orderInfoContainer.innerHTML = `
+                        <p><strong>Order Number:</strong> ${data.order.orderNumber}</p>
+                        <p><strong>Date:</strong> ${new Date(data.order.createdAt).toLocaleDateString()}</p>
+                        <p><strong>Status:</strong> ${data.order.status}</p>
+                        <p><strong>Payment Status:</strong> ${data.order.paymentStatus}</p>
+                        <p><strong>Total Amount:</strong> $${data.order.totalAmount.toFixed(2)}</p>
+                        <p><strong>Payment Method:</strong> ${data.order.paymentMethod}</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Error fetching order details:', error);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('order-info').innerHTML = `<p>Unable to load order details. Please check your order history.</p>`;
+                    document.getElementById('order-info').style.display = 'block';
+                });
+            } else {
+                // No token available
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('order-info').innerHTML = `<p>Please log in to view your order details.</p>`;
+                document.getElementById('order-info').style.display = 'block';
+            }
+        } else {
+            // No order ID in URL
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('order-info').innerHTML = `<p>Thank you for your purchase! Your order has been placed successfully.</p>`;
+            document.getElementById('order-info').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

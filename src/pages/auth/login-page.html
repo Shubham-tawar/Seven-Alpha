@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts for elegance -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="icon" href="../../../public/images/7-logo.png" sizes="32x32"/>
+  <style>
+    :root {
+      --black: #131313;
+      --black2: #191919;
+      --gold: #d4af37;
+      --gold-dark: #b38f00;
+      --white: #fff;
+      --gray: #b0b0b0;
+      --radius: 18px;
+      --shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bg-image {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+     /* background: url('../images/ChatGPT\ Image\ Jun\ 10\,\ 2025\,\ 04_21_59\ PM.png') center center/cover no-repeat; */
+      
+    }
+    .overlay {
+      position: fixed;
+      inset: 0;
+       background: linear-gradient(120deg, rgba(19,19,19,0.92) 60%, rgba(212,175,55,0.08) 100%); 
+      z-index: 1;
+    }
+    .login-container {
+      position: absolute;
+      z-index: 2;
+      background: var(--black2);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 400px;
+      width: 100%;
+      padding: 48px 36px 36px 36px;
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1.5px solid var(--gold-dark);
+      /* glass effect */
+      backdrop-filter: blur(2px);
+      top: 47px; 
+      right: 136px; 
+      width: 610px; 
+      height: 606px;
+      
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .brand-icon {
+      color: var(--gold);
+      font-size: 2rem;
+    }
+    .brand-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+    .login-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+    .form-group {
+      width: 100%;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .form-group input {
+      width: 95%;
+      padding: 14px 10px 14px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--gold-dark);
+      background: var(--black);
+      color: var(--white);
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .form-group input:focus {
+      border: 1.5px solid var(--gold);
+      background: #181818;
+    }
+    .form-group .fa {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+    .form-group input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 100px var(--black) inset !important;
+      -webkit-text-fill-color: var(--white) !important;
+    }
+    .form-group input[type="checkbox"] {
+      width: auto;
+      margin: 0 8px 0 0;
+      accent-color: var(--gold);
+      vertical-align: middle;
+    }
+    .form-group label {
+      color: var(--gray);
+      font-size: 0.97rem;
+      margin-left: 4px;
+    }
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border: none;
+      border-radius: 8px;
+      padding: 14px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 8px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 10px rgba(212,175,55,0.06);
+    }
+    .login-btn:hover {
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+      color: var(--black);
+    }
+    .divider {
+      width: 100%;
+      text-align: center;
+      color: var(--gray);
+      margin: 18px 0 10px 0;
+      font-size: 0.95rem;
+      position: relative;
+    }
+    .divider:before, .divider:after {
+      content: "";
+      display: inline-block;
+      width: 35%;
+      border-top: 1px solid var(--gold-dark);
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+    .google-btn {
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      border: 1.5px solid var(--gold-dark);
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.02rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+      margin-bottom: 8px;
+    }
+    .google-btn:hover {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+    .form-footer {
+      margin-top: 18px;
+      color: var(--gray);
+      font-size: 0.98rem;
+      text-align: center;
+    }
+    .form-footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 4px;
+      transition: color 0.2s;
+    }
+    .form-footer a:hover {
+      color: var(--gold-dark);
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .login-container {
+        max-width: 98vw;
+        padding: 24px 6vw 18px 6vw;
+      }
+      .brand-name { font-size: 1.3rem; }
+      .brand-icon { font-size: 1.3rem; }
+    }
+    
+  .container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+
+  .left-section {
+    flex: 1; /* Takes up half the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #181818; /* Match your dark background */
+  }
+
+  .logo-img {
+    max-width: 100%; /* Adjust as needed */
+    height: auto;
+    z-index: 12;
+    position: relative;
+    top: 100px;
+  }
+
+  .right-section {
+    flex: 1; /* Takes up the other half */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #232323; /* Slightly different or same as left */
+  }
+
+  
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="overlay"></div>
+  <div class="container">
+  <div class="left-section">
+    <!-- Logo Image -->
+    <img class="logo-img" src="../../../public/images/7-logo.png" alt="main image">
+  </div>
+  <div class="right-section">
+    <!-- Login Form -->
+    <!-- (Your existing login form code here) -->
+     <form class="login-container" autocomplete="off">
+      <div class="brand">
+        <i class="fa-solid fa-crown brand-icon"></i>
+        <span class="brand-name">Seven Alpha</span>
+      </div>
+      <div class="login-title">Sign in to your account</div>
+      <div class="form-group">
+        <input type="text" placeholder="Full Name" required>
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email" required>
+        <i class="fa fa-envelope"></i>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Address" required>
+        <i class="fa fa-map-marker-alt"></i>
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password" required>
+        <i class="fa fa-lock"></i>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+      <div class="divider">or</div>
+      <button type="button" class="google-btn" onclick="googleLogin()">
+        <i class="fab fa-google"></i> Login with Google
+      </button>
+      <div class="form-footer">
+        Don't have an account?
+        <a href="#">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</div>
+  
+  <script>
+    function googleLogin() {
+      alert('Google login integration goes here.');
+      // Place your Google OAuth logic here
+    }
+    // Optional: Prevent default form submission for demo
+    document.querySelector('.login-container').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Login submitted!');
+    });
+  </script>
+</body>
+</html>

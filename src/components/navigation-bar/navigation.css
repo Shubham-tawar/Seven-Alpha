@@ -1,0 +1,82 @@
+.menu-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  background: #1a1a1a;
+}
+
+:root {
+  --primary-color: #1a1a1a;
+  --accent-color: #ecc94e;
+  --gold-color: #d4af37;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-light: #999;
+  --bg-light: #1b1b1b;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+}
+
+/* Make header use flexbox for layout */
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+}
+
+/* Center the navigation absolutely */
+.navigation.visible_menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white);
+}
+
+/* Optional: styling the navigation menu items */
+.navigation .menu {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+/* Sub-menu display on hover */
+.menu li {
+  position: relative;
+}
+
+.menu li .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  z-index: 1;
+}
+
+.menu li:hover > .sub-menu {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
+.sub-menu li {
+  white-space: nowrap;
+  padding-left: 20px;
+}
+
+.sub-menu .sub-menu {
+  left: 100%;
+  top: 0;
+}
+
+.login-icon:hover {
+  scale: 1.5;
+  color: var(--gold-color);
+}

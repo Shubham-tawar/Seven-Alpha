@@ -1,0 +1,75 @@
+.site-footer{
+    margin: 0 ;
+    padding: 10px;
+    color: white;
+}
+
+div.site-footer{
+    margin: 0;
+    padding: 0;
+}
+
+/* Fix layout in footer rows */
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+/* Widgets (column items) spacing */
+footer .widget {
+  margin-bottom: 2rem;
+  color: #cacaca;
+}
+
+footer .widget-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+/* Footer links */
+footer .menu a {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  color: #cacaca;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .menu a:hover {
+  color: gold;
+}
+
+/* Contact rows */
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #cacaca;
+}
+
+.contact-row i {
+  color: gold;
+  font-size: 1.1rem;
+}
+
+/* Make logos stack better */
+.site-logo img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Fix the copyright text */
+.copyright {
+  margin-top: 1.5rem;
+  font-size: 13px;
+  color: #888;
+}

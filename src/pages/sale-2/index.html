@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Flash Sale - Premium Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dMa2V2p3FZ7AGUwDs6Y2Gf5YaJ5Ngh6DnFoFwRhMrk9KPhq9GKHYqzO2E7w3H7JZB9kGxFa1UecI0wQ7k4b8yA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
+    <!-- StyleSheet for nav and footer-->
+    <link rel="stylesheet" href="/src/assets/styles/main-css-style.css">
+    <link rel="stylesheet" href="/src/assets/styles/styles.css">
+    <link rel="stylesheet" href="/src/components/navigation-bar/navigation.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/logo.PNG">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <div class="nav-header"></div>
+
+    <main class="main">
+        <div class="container">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Filters</h3>
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>Category</h4>
+                    <div class="filter-options" id="categoryFilter">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-range">
+                        <input type="range" id="priceRange" min="0" max="5000" value="5000" class="range-slider">
+                        <div class="price-display">
+                            <span>$0 - $<span id="priceValue">5000</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Brand</h4>
+                    <div class="filter-options" id="brandFilter">
+                        <!-- Brands will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Material</h4>
+                    <div class="filter-options" id="materialFilter">
+                        <!-- Materials will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <button class="clear-filters" id="clearFilters">Clear All Filters</button>
+            </aside>
+
+            <div class="content">
+                <button class="mobile-filter-btn" id="mobileFilterBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 3H2L10 12.46V19L14 21V12.46L22 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Filters
+                </button>
+
+                <section class="product-section" id="newArrivals">
+                    <h2 class="section-title">New Arrivals</h2>
+                    <div class="product-grid" id="newArrivalsGrid">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <section class="product-section" id="trendingNow">
+                    <h2 class="section-title">Trending Now</h2>
+                    <div class="product-grid" id="trendingNowGrid">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <section class="product-section" id="bestSellers">
+                    <h2 class="section-title">Best Sellers</h2>
+                    <div class="product-grid" id="bestSellersGrid">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="site-footer"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

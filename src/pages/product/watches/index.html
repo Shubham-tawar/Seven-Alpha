@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watches-Premium Timepieces</title>
+    
+    <!-- StyleSheet for nav and footer-->
+    <link rel="stylesheet" href="../../../assets/styles/main-css-style.css">
+    <link rel="stylesheet" href="../../../assets/styles/styles.css">
+    <link rel="stylesheet" href="../../../components/footer/footer.css">
+    <link rel="stylesheet" href="../../../components/navigation-bar/navigation.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/logo.PNG">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    
+</head>
+<body></body>    
+
+    <div class="app">
+        <!-- Header  -->
+        <header class="watch-header">
+            <div class="header-container">
+                
+                <div class="header-content">
+                    <!--
+                    <div class="logo-section">
+                        <div class="logo-icon">
+                            <i data-lucide="shopping-bag"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1 class="logo-title">LuxeTime</h1>
+                            <p class="logo-subtitle">Premium Timepieces</p>
+                        </div>
+                    </div>
+                    -->
+                    
+
+                    <!---->
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <i data-lucide="search" class="search-icon"></i>
+                            <input 
+                                type="text" 
+                                placeholder="Search luxury watches..." 
+                                class="search-input"
+                                id="searchInput"
+                            />
+                        </div>
+                    </div>
+
+                    
+                    <div class="header-actions">
+                        <button class="btn btn-ghost view-toggle" id="viewToggle">
+                            <i data-lucide="grid-3x3" id="viewIcon"></i>
+                        </button>
+                        
+                        <button class="btn btn-luxury filter-toggle" id="filterToggle">
+                            <i data-lucide="sliders-horizontal"></i>
+                            Filters
+                        </button>
+
+                        <button class="btn btn-gold cart-btn">
+                            <i data-lucide="shopping-bag"></i>
+                            Cart (0)
+                        </button>
+                    </div>
+                </div> 
+
+                
+                <div class="mobile-search">
+                    <div class="search-input-wrapper">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input 
+                            type="text" 
+                            placeholder="Search luxury watches..." 
+                            class="search-input"
+                            id="mobileSearchInput"
+                        />
+                    </div>
+                </div>
+            </div>
+        </header> 
+
+        <div class="nav-header"></div> 
+
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+            <div class="sidebar" id="sidebar">
+                <!-- Sidebar Header -->
+                <div class="sidebar-header">
+                    <div class="sidebar-title">
+                        <i data-lucide="sliders-horizontal"></i>
+                        <h2>Filters</h2>
+                    </div>
+                    <button class="btn btn-ghost close-sidebar" id="closeSidebar">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="sidebar-content">
+                    <!-- Price Range -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">Price Range</h3>
+                        <div class="price-range-container">
+                            <div class="range-slider">
+                                <input type="range" id="minPrice" min="500" max="100000" value="1000" step="500" class="range-input">
+                                <input type="range" id="maxPrice" min="500" max="100000" value="50000" step="500" class="range-input">
+                            </div>
+                            <div class="price-display">
+                                <span id="minPriceDisplay">$1,000</span>
+                                <span id="maxPriceDisplay">$50,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Categories -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">Categories</h3>
+                        <div class="checkbox-group" id="categoriesGroup">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="dress" value="Dress Watches">
+                                <label for="dress">Dress Watches</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sport" value="Sport Watches">
+                                <label for="sport">Sport Watches</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="chronograph" value="Chronograph">
+                                <label for="chronograph">Chronograph</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="diving" value="Diving Watches">
+                                <label for="diving">Diving Watches</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="gmt" value="GMT/Travel">
+                                <label for="gmt">GMT/Travel</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="skeleton" value="Skeleton/Open Heart">
+                                <label for="skeleton">Skeleton/Open Heart</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="vintage" value="Vintage Classic">
+                                <label for="vintage">Vintage Classic</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <!-- Brands -->
+                    <div class="filter-section">
+                        <h3 class="filter-title">Brands</h3>
+                        <div class="checkbox-group" id="brandsGroup">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="arteal" value="Arteal">
+                                <label for="arteal">Arteal</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pomet" value="Pomet Voiters">
+                                <label for="pomet">Pomet Voiters</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="swiss" value="Swiss Luxury">
+                                <label for="swiss">Swiss Luxury</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="biotleck" value="Biotleck">
+                                <label for="biotleck">Biotleck</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="vinu" value="Vinu Chronos">
+                                <label for="vinu">Vinu Chronos</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="elite" value="Elite Timepieces">
+                                <label for="elite">Elite Timepieces</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clear Filters -->
+                    <button class="btn btn-luxury clear-filters" id="clearFilters">
+                        Clear All Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="gold-gradient-text">Luxury Timepieces</span>
+                        </h1>
+                        
+                    </div>
+                </section>
+
+                <!-- Products Section -->
+                <section class="products-section">
+                    <!-- Section Header -->
+                    <div class="section-header">
+                        <div class="section-title-container">
+                            <h2 class="section-title">Our Collection</h2>
+                            <p class="section-subtitle">
+                                Handpicked luxury timepieces for the discerning collector
+                            </p>
+                        </div>
+                        
+                        <div class="sort-container">
+                            <span class="sort-label">Sort by:</span>
+                            <select class="sort-select" id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                                <option value="bestselling">Best Selling</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Watch Grid -->
+                    <div class="watch-grid" id="watchGrid">
+                        <!-- Watch cards will be dynamically generated here -->
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <h3>No watches found</h3>
+                        <p>Try adjusting your filters to see more results.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        
+
+        <div class="site-footer"></div>
+    </div>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="/src/pages/cart/cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

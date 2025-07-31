@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | 7 ALPHA</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #FFD700;
+      --dark: #000;
+      --gray: #ccc;
+      --light-dark: #111;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    header nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .thank-you-section {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .thank-you-section h1 {
+      font-size: 2.5rem;
+      color: var(--gold);
+    }
+
+    .thank-you-section p {
+      font-size: 1rem;
+      color: var(--gray);
+      margin-top: 10px;
+    }
+
+    .summary-container {
+      background-color: var(--light-dark);
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid var(--gold);
+    }
+
+    .summary-header {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 10px;
+    }
+
+    .summary-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .summary-details div {
+      width: 45%;
+      margin-bottom: 15px;
+    }
+
+    .summary-details span {
+      font-weight: bold;
+      color: var(--gold);
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+
+    .delivery-info {
+      border-top: 1px solid var(--gold);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .buttons button {
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .buttons .track {
+      background-color: var(--gold);
+      color: black;
+    }
+    .continue-shopping:hover, .cancel-order:hover{
+      background-color: var(--gold);
+      color: black;
+      
+    }
+
+    .help-section {
+      background-color: var(--light-dark);
+      margin: 30px auto;
+      max-width: 900px;
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .help-section button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: var(--gold);
+      color: black;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background-color: var(--dark);
+      border-top: 1px solid var(--gold);
+      color: white;
+    }
+
+    footer input {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    footer button {
+      padding: 10px 20px;
+      background-color: var(--gold);
+      color: black;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" style="color: var(--gold); font-size: 1.5rem; font-weight: bold;">7 ALPHA</div>
+    <nav>
+      <a href="#">Shop</a>
+      <a href="#">Offers</a>
+      <a href="#">Our Story</a>
+      <a href="#">Blog</a>
+    </nav>
+  </header>
+
+  <div class="thank-you-section">
+    <h1>Thank You for Your Exquisite Purchase!</h1>
+    <p>A confirmation has been sent to your email. We appreciate your trust in 7 ALPHA luxury.</p>
+  </div>
+
+  <div class="summary-container">
+    <div class="summary-header">Order Summary</div>
+    <div class="summary-details">
+      <div><span>Date:</span> July 24, 2024</div>
+      <div><span>Customer:</span> Eleanor Vance</div>
+      <div><span>Payment Method:</span> Mastercard <i class="fab fa-cc-mastercard"></i></div>
+      <div><span>Order Number:</span> LUX-8765-4321</div>
+      <div><span>Total:</span> $450.00</div>
+    </div>
+
+    <div class="items">
+      <div class="item">
+        <img src="../images/blazer.jpeg" alt="Serum">
+        <div>
+          <div>Blazer</div>
+          <small>Quantity: 1 - $180.00</small>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../images/Tshirt3.jpg" alt="Moisturizer">
+        <div>
+          <div>Velvet Touch TShirt </div>
+          <small>Quantity: 1 - $120.00</small>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../images/Tshirt5.jpeg" alt="Perfume">
+        <div>
+          <div>Midnight Bloom TShirt </div>
+          <small>Quantity: 1 - $150.00</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="delivery-info">
+      <div><span>Shipping Address:</span> 123 Opulence Avenue, Suite 400, Beverly Hills, CA</div>
+      <div><span>Estimated Delivery:</span> August 1–3, 2024</div>
+      <div><span>Order Status:</span> <span style="color: orange">Processing</span></div>
+    </div>
+
+    <div class="buttons">
+      <button class="track">Track Order</button>
+      <button class="cancel-order">Cancel Order</button>
+      <button class="continue-shopping">Continue Shopping</button>
+    </div>
+  </div>
+
+  <div class="help-section">
+    <h3>Need Assistance?</h3>
+    <p>Our support team is here to help you with any order queries.</p>
+    <button>Contact Support</button>
+  </div>
+
+  <footer>
+    <h2>7 ALPHA</h2>
+    <p>Be the First to Discover New Collections</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+    <p style="margin-top: 20px">&copy; 2025 7 ALPHA. All rights reserved.</p>
+  </footer>
+</body>
+</html>

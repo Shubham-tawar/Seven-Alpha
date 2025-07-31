@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Clothing Store</title>
+    <!-- StyleSheet for nav and footer-->
+    <link rel="stylesheet" href="../../../assets/styles/main-css-style.css">
+    <link rel="stylesheet" href="../../../assets/styles/styles.css">
+    <link rel="stylesheet" href="../../../components/footer/footer.css">
+    <link rel="stylesheet" href="../../../components/navigation-bar/navigation.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <!--J Query link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/logo.PNG">
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-header"></div>
+
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="heading-title">
+                <h2>MEN APPAREL</h2>
+            </div>
+            <div class="content-wrapper">
+                
+                <!-- Filter Sidebar -->
+                <aside class="filter-sidebar">
+                    <div class="filter-content">
+                        <!-- Search -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Search Products</h3>
+                            <div class="search-container">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" id="searchInput" class="search-input" placeholder="Search men's clothing...">
+                            </div>
+                        </div>
+
+                        <!-- Price Range Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Price Range</h3>
+                            <div class="price-range-container">
+                                <input type="range" min="0" max="5000" value="5000" class="price-slider" id="priceRange">
+                                <div class="price-values">
+                                    <span>$0</span>
+                                    <span id="currentPrice">$5000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Size Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Size</h3>
+                            <div class="filter-options" id="sizeFilters">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="S">
+                                    <span class="checkmark"></span>
+                                    Small (S)
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="M">
+                                    <span class="checkmark"></span>
+                                    Medium (M)
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="L">
+                                    <span class="checkmark"></span>
+                                    Large (L)
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="XL">
+                                    <span class="checkmark"></span>
+                                    Extra Large (XL)
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="XXL">
+                                    <span class="checkmark"></span>
+                                    Double XL (XXL)
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Type Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Type</h3>
+                            <div class="filter-options" id="typeFilters">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="T-Shirts">
+                                    <span class="checkmark"></span>
+                                    T-Shirts
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Shirts">
+                                    <span class="checkmark"></span>
+                                    Shirts
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Jeans">
+                                    <span class="checkmark"></span>
+                                    Jeans
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Jackets">
+                                    <span class="checkmark"></span>
+                                    Jackets
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Hoodies">
+                                    <span class="checkmark"></span>
+                                    Hoodies
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Shorts">
+                                    <span class="checkmark"></span>
+                                    Shorts
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Color Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Color</h3>
+                            <div class="filter-options" id="colorFilters">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Black">
+                                    <span class="checkmark"></span>
+                                    Black
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="White">
+                                    <span class="checkmark"></span>
+                                    White
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Blue">
+                                    <span class="checkmark"></span>
+                                    Blue
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Gray">
+                                    <span class="checkmark"></span>
+                                    Gray
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Navy">
+                                    <span class="checkmark"></span>
+                                    Navy
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Red">
+                                    <span class="checkmark"></span>
+                                    Red
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Brand Filter -->
+                        <div class="filter-card">
+                            <h3 class="filter-title">Brand</h3>
+                            <div class="filter-options" id="brandFilters">
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Nike">
+                                    <span class="checkmark"></span>
+                                    Nike
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Adidas">
+                                    <span class="checkmark"></span>
+                                    Adidas
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Levi's">
+                                    <span class="checkmark"></span>
+                                    Levi's
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Calvin Klein">
+                                    <span class="checkmark"></span>
+                                    Calvin Klein
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Tommy Hilfiger">
+                                    <span class="checkmark"></span>
+                                    Tommy Hilfiger
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" value="Ralph Lauren">
+                                    <span class="checkmark"></span>
+                                    Ralph Lauren
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <div class="clear-filters-container">
+                            <button class="clear-filters-btn" id="clearFilters">
+                                <i class="fas fa-times"></i>
+                                Clear All Filters
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <section class="product-grid-container">
+                    <div class="product-grid" id="productGrid">
+                        <!-- Products will be dynamically inserted here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Filter Toggle -->
+    <button class="filter-toggle lg-hidden" id="filterToggle">
+        <i class="fas fa-filter"></i>
+        Filters
+    </button>
+
+    <!-- Mobile Filter Overlay -->
+    <div class="mobile-filter-overlay" id="mobileFilterOverlay">
+        <div class="mobile-filter-content">
+            <div class="mobile-filter-header">
+                <h2>Filters</h2>
+                <button class="close-mobile-filter" id="closeMobileFilter">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Same filter content as sidebar for mobile -->
+            <div class="filter-content">
+                <!-- Search -->
+                <div class="filter-card">
+                    <h3 class="filter-title">Search Products</h3>
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search men's clothing...">
+                    </div>
+                </div>
+
+                <!-- Price Range Filter -->
+                <div class="filter-card">
+                    <h3 class="filter-title">Price Range</h3>
+                    <div class="price-range-container">
+                        <input type="range" min="0" max="5000" value="5000" class="price-slider">
+                        <div class="price-values">
+                            <span>$0</span>
+                            <span>$5000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Size Filter -->
+                <div class="filter-card">
+                    <h3 class="filter-title">Size</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="S">
+                            <span class="checkmark"></span>
+                            Small (S)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="M">
+                            <span class="checkmark"></span>
+                            Medium (M)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="L">
+                            <span class="checkmark"></span>
+                            Large (L)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="XL">
+                            <span class="checkmark"></span>
+                            Extra Large (XL)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="XXL">
+                            <span class="checkmark"></span>
+                            Double XL (XXL)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Mobile Type Filter -->
+                <div class="filter-card">
+                    <h3 class="filter-title">Type</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="T-Shirts">
+                            <span class="checkmark"></span>
+                            T-Shirts
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Shirts">
+                            <span class="checkmark"></span>
+                            Shirts
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Jeans">
+                            <span class="checkmark"></span>
+                            Jeans
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Jackets">
+                            <span class="checkmark"></span>
+                            Jackets
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Hoodies">
+                            <span class="checkmark"></span>
+                            Hoodies
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Shorts">
+                            <span class="checkmark"></span>
+                            Shorts
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Mobile Color Filter -->
+                <div class="filter-card">
+                    <h3 class="filter-title">Color</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="Black">
+                            <span class="checkmark"></span>
+                            Black
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="White">
+                            <span class="checkmark"></span>
+                            White
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Blue">
+                            <span class="checkmark"></span>
+                            Blue
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Gray">
+                            <span class="checkmark"></span>
+                            Gray
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Navy">
+                            <span class="checkmark"></span>
+                            Navy
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Red">
+                            <span class="checkmark"></span>
+                            Red
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Mobile Brand Filter -->
+                <div class="filter-card">
+                    <h3 class="filter-title">Brand</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="Nike">
+                            <span class="checkmark"></span>
+                            Nike
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Adidas">
+                            <span class="checkmark"></span>
+                            Adidas
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Levi's">
+                            <span class="checkmark"></span>
+                            Levi's
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Calvin Klein">
+                            <span class="checkmark"></span>
+                            Calvin Klein
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Tommy Hilfiger">
+                            <span class="checkmark"></span>
+                            Tommy Hilfiger
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="Ralph Lauren">
+                            <span class="checkmark"></span>
+                            Ralph Lauren
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer -->
+    <div class="site-footer"></div>
+    <script src="../../cart/cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

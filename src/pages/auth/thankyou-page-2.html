@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You for Your Purchase | Lé.nature</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #FFD700;
+      --gold-dark: #C9B037;
+      --black: #000000;
+      --white: #fff;
+      --gray: #b0b0b0;
+      --card-bg: #11111;
+      --border-radius: 18px;
+      --shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+    }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 36px 32px 32px 32px;
+      border: 2px solid var(--gold-dark);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .order-summary {
+      background: rgba(24,24,24,0.8);
+      border-radius: var(--border-radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1.5px solid var(--gold-dark);
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .summary-row .label {
+      color: var(--gray);
+    }
+    .summary-row .value {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .summary-row .gold {
+      color: var(--gold);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .items-ordered {
+      margin-top: 18px;
+      margin-bottom: 16px;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .item-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      background: var(--gold-dark);
+      margin-right: 18px;
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(255,215,0,0.12);
+    }
+    .item-details {
+      flex: 1;
+    }
+    .item-title {
+      font-weight: 600;
+      color: var(--gold);
+      font-size: 1.08rem;
+    }
+    .item-qty {
+      color: var(--gray);
+      font-size: 0.92rem;
+    }
+    .item-price {
+      font-weight: 600;
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-left: 14px;
+    }
+    .delivery-info {
+      margin-top: 18px;
+      border-top: 1px solid var(--gold-dark);
+      padding-top: 18px;
+      font-size: 1rem;
+    }
+    .delivery-info .label {
+      color: var(--gray);
+      font-weight: 500;
+    }
+    .order-status {
+      display: inline-block;
+      padding: 4px 14px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border-radius: 12px;
+      font-weight: 700;
+      margin-left: 10px;
+      font-size: 0.98rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 1px 6px rgba(255,215,0,0.13);
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 32px 0 0 0;
+    }
+    .btn {
+      padding: 12px 32px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+      box-shadow: 0 2px 10px rgba(255,215,0,0.09);
+    }
+    .btn-gold {
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+      color: var(--black);
+      box-shadow: 0 4px 16px rgba(255,215,0,0.19);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--gold-dark);
+      color: var(--gold);
+    }
+    .btn-outline:hover {
+      background: var(--gold-dark);
+      color: var(--black);
+    }
+    .btn-link {
+      background: none;
+      border: none;
+      color: var(--gray);
+      text-decoration: underline;
+      padding: 0;
+      font-size: 1.08rem;
+      margin-top: 2px;
+    }
+    .support-box {
+      background: #191919;
+      border: 1px solid var(--gold-dark);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      margin: 24px 0 0 0;
+      text-align: center;
+    }
+    .support-box .support-title {
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .support-box .support-text {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+    .support-box .btn-gold {
+      padding: 9px 28px;
+      font-size: 1rem;
+    }
+    .footer {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.98rem;
+      margin: 38px 0 0 0;
+    }
+    .subscribe-box {
+      margin: 18px auto 0 auto;
+      max-width: 330px;
+      display: flex;
+      gap: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1.5px solid var(--gold-dark);
+    }
+    .subscribe-box input {
+      flex: 1;
+      border: none;
+      padding: 10px 12px;
+      font-size: 1rem;
+      outline: none;
+      background: #191919;
+      color: var(--white);
+    }
+    .subscribe-box button {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 10px 22px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .subscribe-box button:hover {
+      background: var(--gold-dark);
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 16px 6px 22px 6px;
+      }
+      .order-summary {
+        padding: 12px;
+      }
+      .support-box {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Thank You for Your Exquisite Purchase!</h1>
+    <div class="subtitle">
+      A detailed confirmation of your order has been sent to your email.<br>
+      We appreciate your trust in Lé.nature’s luxury.<br>
+      Your order is being meticulously prepared for shipment.
+    </div>
+
+    <div class="order-summary">
+      <div class="summary-row">
+        <span class="label">Date:</span>
+        <span class="value">July 24, 2024</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">Payment Method:</span>
+        <span class="value">Mastercard <span style="font-size:1.1em;">💳</span></span>
+      </div>
+      <div class="summary-row">
+        <span class="label">Total:</span>
+        <span class="gold">$450.00</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">Customer:</span>
+        <span class="value">Eleanor Vance</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">Order Number:</span>
+        <span class="value">LUX-8765-4321</span>
+      </div>
+      <div class="items-ordered">
+        <div class="item">
+          <img class="item-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=80&q=80" alt="Radiant Glow Serum">
+          <div class="item-details">
+            <div class="item-title">Radiant Glow Serum</div>
+            <div class="item-qty">50ml &nbsp; | &nbsp; Qty: 1</div>
+          </div>
+          <div class="item-price">$180.00</div>
+        </div>
+        <div class="item">
+          <img class="item-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Velvet Touch Moisturizer">
+          <div class="item-details">
+            <div class="item-title">Velvet Touch Moisturizer</div>
+            <div class="item-qty">100ml &nbsp; | &nbsp; Qty: 1</div>
+          </div>
+          <div class="item-price">$120.00</div>
+        </div>
+        <div class="item">
+          <img class="item-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=80&q=80" alt="Midnight Bloom Perfume">
+          <div class="item-details">
+            <div class="item-title">Midnight Bloom Perfume</div>
+            <div class="item-qty">75ml &nbsp; | &nbsp; Qty: 1</div>
+          </div>
+          <div class="item-price">$150.00</div>
+        </div>
+      </div>
+      <div class="delivery-info">
+        <div><span class="label">Shipping Address:</span> 123 Opulence Avenue, Suite 400, Beverly Hills, CA 90210, USA</div>
+        <div><span class="label">Estimated Delivery:</span> August 1–3, 2024</div>
+        <div><span class="label">Order Status:</span> <span class="order-status" id="orderStatus">Processing</span></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-gold" onclick="trackOrder()">Track Order</button>
+      <button class="btn btn-outline" onclick="cancelOrder()">Cancel Order</button>
+      <button class="btn btn-link" onclick="continueShopping()">Continue Shopping</button>
+    </div>
+
+    <div class="support-box">
+      <div class="support-title">Need Assistance?</div>
+      <div class="support-text">
+        Our customer support team is here to help with any questions regarding your order.
+      </div>
+      <button class="btn btn-gold" onclick="contactSupport()">Contact Support</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div style="font-weight:600; color:var(--gold); margin-bottom:8px;">Lé.nature</div>
+    <div>Be the First to Discover New Collections</div>
+    <form class="subscribe-box" onsubmit="subscribe(event)">
+      <input type="email" id="email" placeholder="Enter your email for exclusive updates" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div style="margin-top:22px; color:var(--gray); font-size:0.96rem;">© 2025 Lé.nature. All rights reserved.</div>
+  </div>
+
+  <script>
+    // Simulate order status update
+    function trackOrder() {
+      const status = document.getElementById('orderStatus');
+      if (status.innerText === 'Processing') {
+        status.innerText = 'Shipped';
+        status.style.background = 'linear-gradient(90deg, #C9B037, #FFD700)';
+      } else if (status.innerText === 'Shipped') {
+        status.innerText = 'Delivered';
+        status.style.background = 'linear-gradient(90deg, #FFD700, #C9B037)';
+      } else {
+        alert('Your order has already been delivered!');
+      }
+    }
+    function cancelOrder() {
+      if (confirm('Are you sure you want to cancel your order?')) {
+        document.getElementById('orderStatus').innerText = 'Cancelled';
+        document.getElementById('orderStatus').style.background = '#444';
+      }
+    }
+    function continueShopping() {
+      window.location.href = '/shop'; // Replace with actual shop URL
+    }
+    function contactSupport() {
+      window.location.href = 'mailto:support@le.nature.com';
+    }
+    function subscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if (email) {
+        alert('Thank you for subscribing, ' + email + '!');
+        document.getElementById('email').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Checkout - Seven Alpha</title>
+    <!-- StyleSheet for nav and footer-->
+        <link rel="stylesheet" href="/src/assets/styles/main-css-style.css">
+        <link rel="stylesheet" href="/src/assets/styles/styles.css">
+        <link rel="stylesheet" href="/src/components/footer/footer.css">
+        <link rel="stylesheet" href="/src/components/navigation-bar/navigation.css">
+        <link rel="shortcut icon" type="image/x-icon" href="/public/images/logo.PNG">
+    <link rel="stylesheet" href="checkout.css" />
+    </head>
+
+    <body>
+        <div class="nav-header"></div>
+
+        <main class="checkout-container">
+            <h2 class="checkout-title">CHECKOUT</h2>
+
+            <div class="checkout-grid">
+                <!-- Left Side: Form -->
+                <form id="checkoutForm" class="checkout-form">
+                <h3>Billing Details</h3>
+
+                <input type="text" name="name" placeholder="Full Name" required />
+                <input type="tel" name="phone" placeholder="Mobile Number" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+                <input type="text" name="address" placeholder="Street Address" required />
+                <input type="text" name="city" placeholder="City" required />
+                <input type="text" name="state" placeholder="State" required />
+                <input type="text" name="zip" placeholder="ZIP / Postal Code" required />
+
+                <h3>Payment Method</h3>
+                <div class="payment-methods">
+                    <label><input type="radio" name="payment" value="cod" checked /> Cash on Delivery</label>
+                    <label><input type="radio" name="payment" value="card" /> Credit/Debit Card</label>
+                    <label><input type="radio" name="payment" value="upi" /> UPI / Wallet</label>
+                </div>
+                
+                <div id="card-payment-container" style="display: none;">
+                    <div id="payment-element"></div>
+                    <div id="payment-message" class="hidden"></div>
+                </div>
+
+                <button type="submit" class="place-order-btn">Place Order</button>
+                </form>
+
+                <!-- Right Side: Order Summary -->
+                <div class="checkout-summary">
+                <h3>Your Order</h3>
+                <ul id="orderList"></ul>
+                <p class="total">Total: $<span id="totalAmount">0</span></p>
+                </div>
+            </div>
+        </main>
+
+        <div class="site-footer"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="checkout.js"></script>
+    </body>
+</html>
